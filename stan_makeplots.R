@@ -1,7 +1,5 @@
 # Jackknife Estimate processing before ploting
 # Neccessary for JAGS and STAN
-load(paste0(mydir, "/output/", run.name, "/mcmc.meta.rda")) # replace with your data directory
-#library
 library(dplyr)
 
 #estimates
@@ -37,7 +35,7 @@ for (i in 1:length(names(predictions))){
   # plot_pt_bounds(estimates, year_idx, lb, ub, unit_idx,
   #                theme_minimal())
   
-  target <- "greg_stuff/fig"
+  target <- "fig"
   target_stub <- file.path(target, paste0("time-series-plots-", names(predictions)[i]))
   #saveRDS(pll, file = paste0(target_stub, ".rds"))
   pdf(paste0(target_stub, ".pdf"), height = 4, width = 4)
