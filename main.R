@@ -10,6 +10,7 @@ rm(list=setdiff(ls(), paste(fun)))
 workdir <- getwd() # can probabily use unquote to put this in the setdiff line above
 
 data_dir_meta <- "/data/mcmc.meta.rda"
+data_dir_jags <- "data/res.country.rda"
 data_dir_stan<- "/data/stan-model.rds"
 data_dir_stand <- "/data/stan-data.rds"
 load(paste0(workdir, data_dir_meta)) # replace with your data directory
