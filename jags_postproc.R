@@ -18,7 +18,9 @@ proportions_jags[[proportion]] <- do.call(rbind, dls) %>%
   as.data.frame %>%
   dplyr::add_rownames("country_idx") %>%
   dplyr::mutate(country = gsub("[^[:alpha:], ]","", country_idx)) %>%
-  dplyr::mutate(country_idx = gsub("[^[:digit:], ]","", country_idx))
+  dplyr::mutate(country_idx = as.numeric(as.factor(country))) %>%
+  dplyr::mutate(group_1 = 1:length(country_idx)) %>%
+  as.data.frame()
 }
 
 
