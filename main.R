@@ -6,7 +6,7 @@ workdir <- getwd() #swap getwd with setwd() if not using Rprojs
 Rfiles <- list.files(file.path(paste0(getwd(),"/R/")), ".R") #gets names of r files
 sapply(paste0(paste0(getwd(),"/R/"), Rfiles), source) #gets functions from file
 
-if (!("xtable" %in% rownames(installed.packages())))
+if (!("pager" %in% rownames(installed.packages())))
 devtools::install_github("sakrejda/pager")
 library(pager)
 
