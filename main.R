@@ -1,10 +1,14 @@
-# Set working directory for the project
-workdir <- getwd()
-setwd(workdir)
+# Set working directory
+workdir <- getwd() #swap getwd with setwd() if not using Rprojs
+
 
 # Source functions for this project
 Rfiles <- list.files(file.path(paste0(getwd(),"/R/")), ".R") #gets names of r files
 sapply(paste0(paste0(getwd(),"/R/"), Rfiles), source) #gets functions from file
+
+if (!("xtable" %in% rownames(installed.packages())))
+devtools::install_github("sakrejda/pager")
+library(pager)
 
 data_dir_meta <- "data/mcmc.meta.rda"
 data_dir_jags <- "data/res.country.rda"
