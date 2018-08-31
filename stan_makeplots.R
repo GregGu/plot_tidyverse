@@ -35,6 +35,8 @@ for (i in 1:length(names(predictions))){
   # plot_pt_bounds(estimates, year_idx, lb, ub, unit_idx,
   #                theme_minimal())
   
+  if (!dir.exists('fig'))
+    dir.create('fig')
   target <- "fig"
   target_stub <- file.path(target, paste0("time-series-plots-", names(predictions)[i]))
   #saveRDS(pll, file = paste0(target_stub, ".rds"))
